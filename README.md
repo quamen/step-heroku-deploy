@@ -41,11 +41,15 @@ In the above example the `MY_DEPLOY_KEY` should match the environment variable n
 
 # Example
 
+For a rails application, the following example will deploy, migrate the database and clear the production cache.
+
 ``` yaml
 deploy:
     steps:
         - heroku-deploy:
             key-name: MY_DEPLOY_KEY
+            run: rake db:migrate
+            run: rails runner -e production Rails.cache.clear
 ```
 
 # Special thanks
