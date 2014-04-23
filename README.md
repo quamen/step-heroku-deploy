@@ -52,6 +52,10 @@ deploy:
             run: rails runner -e production Rails.cache.clear
 ```
 
+# Trouble Shooting
+
+* If a run command hangs, waiting on authentication, check your heroku API key is valid in the settings tab of your application on Wercker.
+
 # Special thanks
 
 [https://app.wercker.com/#wernerb](wernerb) for fixing submodule support and allowing the repository to be reused.
